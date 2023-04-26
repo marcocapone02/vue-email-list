@@ -9,6 +9,8 @@
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+  <link rel="stylesheet" href="assets/css/style.css">
+
   <title>Email List</title>
 
 </head>
@@ -19,7 +21,12 @@
 
     <h1>{{ title }}</h1>
 
-    <p v-if="emails.length < limit">Caricamento...</p>
+    <p v-if="emails.length < limit">
+
+      <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTZjODk3NDU1NzJiNzAxZjI3YmMzOWRiNmQ2YjRhYzkzODE5MDQ0NCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PXM/KKCuBooszlPG0/giphy.gif" alt="Caricamento...">
+
+    </p>
+    
     <ul v-else>
       <li v-for="email in emails">{{ email }}</li>
     </ul>

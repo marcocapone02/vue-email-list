@@ -6,7 +6,7 @@ createApp({
       title: 'Email List',
       api: 'https://flynn.boolean.careers/exercises/api/random/mail',
       emails: [],
-      limit: 150
+      limit: 600
     }
   },
   methods:{
