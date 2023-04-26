@@ -19,8 +19,10 @@
 
     <h1>{{ title }}</h1>
 
-    <p v-if="!loading">Caricamento...</p>
-    <p v-else>{{ email }}</p>
+    <p v-if="emails.length < limit">Caricamento...</p>
+    <ul v-else>
+      <li v-for="email in emails">{{ email }}</li>
+    </ul>
 
   </div>
 

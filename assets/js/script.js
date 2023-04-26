@@ -5,21 +5,22 @@ createApp({
     return {
       title: 'Email List',
       api: 'https://flynn.boolean.careers/exercises/api/random/mail',
-      email:'',
-      loading: false
+      emails: [],
+      limit: 150
     }
   },
   methods:{
     getApi(){
       axios.get(this.api)
       .then( res => {
-        console.log(res.data.response);
-        this.email = res.data.response;
-        this.loading = true
+        this.emails.push(res.data.response);
+        console.log(this.emails);
       } )
     }
   },
   mounted() {
-    this.getApi()
+    for (let i = 0; i < this.limit; i++){
+      this.getApi()
+    }
   },
 }).mount('#app')
